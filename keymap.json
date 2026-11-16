@@ -2,10 +2,10 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      ", h w": ["task::Spawn", { "task_name": "hello-world" }]
+      ", h w": ["task::Spawn", { "task_name": "hello-world" }],
       ", g t": ["task::Spawn", { "task_name": "goto-test" }],
-      ", m t f": ["task::Spawn", { "task_name": "make-testfile" }]
-      ", s t f": ["task::Spawn", { "task_name": "set-testfile" }]
+      ", m t f": ["task::Spawn", { "task_name": "make-testfile" }],
+      ", s t f": ["task::Spawn", { "task_name": "set-testfile" }],
     }
   }
 ]

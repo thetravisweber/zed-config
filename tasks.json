@@ -6,7 +6,7 @@
     "hide": "on_success",
     "allow_concurrent_runs": true
   },
-  { "label": "hello-world", "command": "echo 'hello world'", "reveal": "always"}
-  { "label": "make-test", "command": "~/.config/zed/scripts/goto-test.sh", "reveal": "always"}
-  { "label": "set-testfile", "command": "~/.config/zed/scripts/set-testfile.sh", "reveal": "always", "hide": "on_success" }
+  { "label": "hello-world", "command": "echo 'hello world'", "reveal": "always"},
+  { "label": "make-test", "command": "~/.config/zed/scripts/goto-test.sh", "reveal": "always"},
+  { "label": "set-testfile", "command": "~/.config/zed/scripts/set-testfile.sh", "reveal": "always", "hide": "on_success" },
 ]
