@@ -9,11 +9,19 @@ file="${ZED_FILE:?}"
 root="${ZED_WORKTREE_ROOT:-$(dirname "$file")}"
 map_dir="$root/.test-meta"
 map="$map_dir/map.json"
+#
+# Path of $1 relative to the project root (portable; no GNU realpath needed)
+relpath() {
+  local abs root_abs
+  abs="$(cd "$(dirname "$1")" && pwd -P)/$(basename "$1")"
+  root_abs="$(cd "$root" && pwd -P)"
+  echo "${abs#"$root_abs"/}"
+}
 
 command -v jq >/dev/null || { echo "jq is required"; exit 1; }
 
 cd "$root"
-code="$(realpath --relative-to="$root" "$file")"
+code="$(relpath "$file")"
 
 # Test path: from arg, or prompt (tab-completes relative to project root)
 test_path="${1:-}"
@@ -22,7 +30,7 @@ if [[ -z "$test_path" ]]; then
 fi
 [[ -z "$test_path" ]] && { echo "No test file given"; exit 1; }
 [[ -f "$test_path" ]] || { echo "Not a file: $test_path"; exit 1; }
-test_rel="$(realpath --relative-to="$root" "$test_path")"
+test_rel="$(relpath "$test_path")"
 
 mkdir -p "$map_dir"
 [[ -s "$map" ]] || echo '[]' > "$map"

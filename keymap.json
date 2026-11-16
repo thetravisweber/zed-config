@@ -3,9 +3,13 @@
     "context": "Editor && vim_mode == normal",
     "bindings": {
       ", h w": ["task::Spawn", { "task_name": "hello-world" }],
-      ", g t": ["task::Spawn", { "task_name": "goto-test" }],
       ", m t f": ["task::Spawn", { "task_name": "make-testfile" }],
       ", s t f": ["task::Spawn", { "task_name": "set-testfile" }],
+      ", g t": ["task::Spawn", { "task_name": "goto-test" }],
+      ", g s": ["task::Spawn", { "task_name": "goto-source" }],
+      ", d t": ["task::Spawn", { "task_name": "define-test" }],
+      ", r t": ["task::Spawn", { "task_name": "run-test" }],
+      ", r f": ["task::Spawn", { "task_name": "run-testfile" }],
     }
   }
 ]
