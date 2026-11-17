@@ -1,0 +1,10 @@
+[
+  { "label": "hello-world", "command": "echo 'hello world'", "reveal": "always"},
+  { "label": "goto-test", "command": "~/.config/zed/scripts/goto-test.sh", "reveal": "never", "hide": "on_success", "allow_concurrent_runs": true },
+  { "label": "goto-source", "command": "~/.config/zed/scripts/goto-source.sh", "reveal": "never", "hide": "on_success", "allow_concurrent_runs": true },
+  { "label": "define-test", "command": "~/.config/zed/scripts/define-test.sh", "reveal": "never", "hide": "on_success", "allow_concurrent_runs": true },
+  { "label": "make-testfile", "command": "~/.config/zed/scripts/make-testfile.sh", "reveal": "always" },
+  { "label": "set-testfile", "command": "~/.config/zed/scripts/set-testfile.sh", "reveal": "always", "hide": "on_success" },
+  { "label": "run-test", "command": "~/.config/zed/scripts/run-test.sh", "reveal": "always", "hide": "never" },
+  { "label": "run-testfile", "command": "~/.config/zed/scripts/run-testfile.sh", "reveal": "always", "hide": "never" },
+]

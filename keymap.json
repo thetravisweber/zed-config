@@ -1,0 +1,101 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "up": [
+        "vim::Up",
+        {
+          "display_lines": true
+        }
+      ],
+      "down": [
+        "vim::Down",
+        {
+          "display_lines": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "cmd-;": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-b": "workspace::ToggleLeftDock",
+      "cmd-j": "workspace::ToggleBottomDock",
+      "ctrl-alt-cmd-shift-o": [
+        "projects::OpenRemote",
+        {
+          "from_existing_connection": true,
+          "create_new_window": false
+        }
+      ],
+      "cmd-shift-a": [
+        "workspace::SendKeystrokes",
+        "ctrl-alt-c i"
+      ],
+      "ctrl-alt-c": [
+        "agent::NewExternalAgentThread",
+        {
+          "agent": "claude-acp"
+        }
+      ]
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-shift-a": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Workspace && !Editor",
+    "bindings": {
+      ", w p": [
+        "workspace::SendKeystrokes",
+        "ctrl-alt-cmd-shift-o cmd-a backspace / h o m e / t r a v i s / n u c l e a r n / w o r k t r e e s /"
+      ],
+      ", w g": "git::Worktree"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      ", w p": [
+        "workspace::SendKeystrokes",
+        "ctrl-alt-cmd-shift-o cmd-a backspace / h o m e / t r a v i s / n u c l e a r n / w o r k t r e e s /"
+      ],
+      ", w g": "git::Worktree"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "/": "file_finder::Toggle",
+      "?": "project_panel::NewSearchInDirectory",
+      "z m": "project_panel::CollapseAllEntries",
+      "z r": "project_panel::ExpandAllEntries",
+      "] d": "project_panel::SelectNextDirectory",
+      "[ d": "project_panel::SelectPrevDirectory",
+      "g g": "menu::SelectFirst",
+      "shift-g": "menu::SelectLast"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      ", h w": ["task::Spawn", { "task_name": "hello-world" }],
+      ", m t f": ["task::Spawn", { "task_name": "make-testfile" }],
+      ", s t f": ["task::Spawn", { "task_name": "set-testfile" }],
+      ", g t": ["task::Spawn", { "task_name": "goto-test" }],
+      ", g s": ["task::Spawn", { "task_name": "goto-source" }],
+      ", d t": ["task::Spawn", { "task_name": "define-test" }],
+      ", r t": ["task::Spawn", { "task_name": "run-test" }],
+      ", r f": ["task::Spawn", { "task_name": "run-testfile" }]
+    }
+  }
+]
